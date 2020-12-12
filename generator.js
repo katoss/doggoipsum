@@ -3,6 +3,7 @@
 // read source text into array
 var fs = require('fs');
 var doggoarray = fs.readFileSync('texts.txt').toString().split("\n");
+doggoarray = doggoarray.map(s => s.trim());
 
 // Create a new object called loremIpsum by invoking the GenerateNewText constructor function
 const loremIpsum = new GenerateNewText();
@@ -11,7 +12,7 @@ const loremIpsum = new GenerateNewText();
 function GenerateNewText() {
     // Add property to the object
     this.sentences = doggoarray;
-    this.punctuation = [".", ",", "!", "?", ".", ",", ",", "!!"];
+    this.punctuation = [".", ",", "!", "?", ".", ",", ",", "!!", ".", ","];
 }
 
 // Method to the GenerateNewText constructor function that generates a random sentence
